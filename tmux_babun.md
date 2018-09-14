@@ -19,6 +19,33 @@ $ brew install tmux
   
 * Ubuntu  
 $ sudo apt-get install tmux  
+
+* Centos
+```centos
+# Install tmux on Centos release 6.5
+
+# install deps
+yum install gcc kernel-devel make ncurses-devel
+
+curl -OL https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
+tar -xf libevent-2.0.22-stable.tar.gz
+cd libevent-2.0.22-stable
+./configure --prefix=/usr/local
+make
+make install
+
+curl -OL https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz
+tar -xf tmux-2.3.tar.gz
+cd tmux-2.3
+LDFLAGS="-L/usr/local/lib -Wl,-rpath=/usr/local/lib" ./configure --prefix=/usr/local
+make
+make install
+
+# pkill tmux
+# close your terminal window (flushes cached tmux executable)
+# open new shell and check tmux version
+tmux -V
+```
   
 > _{ ~ }  >> vim [.tmux.conf](https://gist.github.com/mousavian/11df288233502e30a09b) 등록_  
 _{ ~ }  >> tmux source-file ~/.tmux.conf_  
