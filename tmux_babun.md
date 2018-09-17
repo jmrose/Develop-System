@@ -55,7 +55,16 @@ _{ ~ }  >> tmux source-file ~/.tmux.conf_
   
   
 # Tmux
+### Session
+* $ tmux new -s <session-name> -n <window-name> : 새 세션 생성
+* >>> ctrl + b, d  : 세션 중단하기 (detached)
+* >>> ctrl + b, $  : 세션 이름 수정
+* $ tmux attach -t <session-number or session-name> : 세션 다시 시작 (attach)
+* >>> (tmux에서) exit   or   $ tmux kill-session -t [name]  : 세션 종료
+* $ tmux ls : 세션 목록 보기 (list-session)
 
+
+### Window
 * Ctrl-b c : 새창을 생성합니다.
 * Ctrl-b d : 현재 클라이언트에서 떨어집니다.
 * Ctrl-b l : 이전에 선택한 윈도우로 이동합니다.
