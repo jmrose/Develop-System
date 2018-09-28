@@ -5,3 +5,4 @@
 * Git
 * Git flow
 * [Docker](https://github.com/jmrose/Docker)
+* [Supervisord](https://github.com/jmrose/Supervisord)
