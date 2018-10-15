@@ -3,14 +3,87 @@
 ; Windows Shell
 
 ### 1. Babun Download & Install  
-http://babun.github.io/  
+[Download Babun](http://babun.github.io/)  &&  C:\Users\UserID\\.babun\install.bat    
 > _vim 에서 마우스 사용 적용하기_  
 _{ ~ }  >> echo "set mouse-=a" >> ~/.vimrc_  
-  
+
+ 
+ 
 ### 2. 업데이트 하기(update.bat 실행)    
-C:\Users\UserID\.babun\update.bat  
+C:\Users\UserID\\.babun\update.bat  
   
-### 3. tmux install  
+
+### 3. Babun Powerline Font 변경
+1) theme 변경
+
+```
+vim .zshrc
+
+ZSH_THEME=”babun”    to  ZSH_THEME=”agnoster”  
+
+```
+
+2) [Download PowerlineFont](https://github.com/powerline/fonts) && install
+```
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
+
+3) [Download Navigate Font](https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf) && install
+```
+Download 후 더블클릭 Install
+```
+
+4) Babun 설정 변경  
+
+$ vim .minttyrc  
+
+```
+Columns = 140
+Rows = 40
+Font=DejaVu Sans Mono for Powerline
+FontHeight = 11
+Charset = UTF-8
+Transparency = off
+BoldAsFont = no
+BoldAsColour = yes
+FontSmoothing = default
+Term = xterm-256color
+
+ForegroundColour = 210, 210, 210
+BackgroundColour =  20,  20,  20
+CursorColour     = 255, 175,   0
+IMECursorColour  = 128, 224, 160
+Black            =  40,  40,  40
+BoldBlack        =   0,   0,   0
+Red              = 220, 135, 135
+BoldRed          = 255, 135, 135
+Green            = 175, 220, 135
+BoldGreen        = 175, 255, 135
+Yellow           = 220, 220, 175
+BoldYellow       = 255, 255, 175
+Blue             = 135, 175, 220
+BoldBlue         = 135, 175, 255
+Magenta          = 220, 175, 220
+BoldMagenta      = 255, 175, 255
+Cyan             = 175, 220, 220
+BoldCyan         = 175, 255, 255
+White            = 210, 210, 210
+BoldWhite        = 230, 230, 230
+````
+
+5) babun 재시작
+
+6) pact
+
+# Tmux 
+
 * Windows OS & babun  
 { ~ }  >> pact install tmux  
   
